@@ -1,0 +1,259 @@
+:root {
+  --clr-primary: hsl(180, 29%, 50%);
+  --clr-bg: hsl(180, 52%, 96%);
+  --clr-filter: hsl(180, 31%, 95%);
+  --clr-dark-cyan: hsl(180, 8%, 52%);
+  --clr-very-dark-cyan: hsl(180, 14%, 20%);
+  --clr-white: white;
+  font-size: 15px;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  background: var(--clr-bg);
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1em);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 85%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.primary-color {
+  color: var(--clr-primary);
+}
+.dark-color {
+  color: var(--clr-very-dark-cyan);
+}
+.grey-color {
+  color: var(--clr-dark-cyan);
+}
+
+/* HEADER */
+
+header {
+  background: var(--clr-primary);
+  background-image: url(../public/images/bg-header-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 150px;
+  position: relative;
+}
+.filters-div {
+  background: var(--clr-white);
+  min-height: 50px;
+  border-radius: 5px;
+  padding: 1em 1.5em;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(50%);
+  box-shadow: 2px 2px 10px var(--clr-dark-cyan);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  flex-wrap: wrap;
+}
+
+.filter-category {
+  background: var(--clr-filter);
+  color: var(--clr-primary);
+  align-items: center;
+  --gap: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.filter-category > p {
+  padding: 0 1em;
+}
+.remove-btn {
+  background: var(--clr-primary);
+  border: 0;
+  padding: 0.5em;
+  cursor: pointer;
+  width: 25px;
+}
+
+.remove-btn > img {
+  vertical-align: middle;
+}
+
+.remove-btn:hover {
+  background: var(--clr-very-dark-cyan);
+}
+.clear-btn {
+  width: 15%;
+  background: none;
+  border: 0;
+  color: var(--clr-dark-cyan);
+  cursor: pointer;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: right;
+}
+
+.clear-btn:hover,
+.clear-btn:focus {
+  color: var(--clr-primary);
+  text-decoration: underline;
+}
+
+/* MAIN */
+
+main {
+  padding: 8em 0;
+}
+
+main > .job-post + .job-post {
+  margin-top: 2.5em;
+}
+.job-post {
+  background: var(--clr-white);
+  box-shadow: 2px 2px 10px var(--clr-dark-cyan);
+  border-left: 5px solid transparent;
+  border-radius: 5px;
+  padding: 2.5em 1.5em 1.5em;
+  position: relative;
+  flex-direction: column;
+}
+
+.job-post:hover {
+  border-left: 5px solid var(--clr-primary);
+}
+
+.post__text > * + * {
+  margin-top: 1em;
+}
+
+.post__company-logo {
+  position: absolute;
+  width: 15%;
+  max-width: 60px;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.new,
+.featured {
+  text-transform: uppercase;
+  color: var(--clr-bg);
+  padding: 3px 10px;
+  line-height: 1.2;
+  border-radius: 30px;
+  font-size: 0.9rem;
+}
+
+.job-title {
+  text-decoration: none;
+}
+
+.job-title > h2 {
+  font-size: 1rem;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.job-title:hover {
+  color: var(--clr-primary);
+}
+
+.new {
+  background: var(--clr-primary);
+}
+
+.featured {
+  background: var(--clr-very-dark-cyan);
+}
+
+.post__info-top {
+  align-items: center;
+}
+
+.post__info-bottom {
+  font-weight: 500;
+}
+
+.post__info-bottom > p > span {
+  margin: 0 1em;
+}
+
+.tags {
+  flex-wrap: wrap;
+}
+
+.tags > * {
+  background: var(--clr-filter);
+  padding: 5px 10px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 2px;
+}
+
+.tags > *:hover {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  color: var(--clr-very-dark-cyan);
+  font-weight: 500;
+  margin: 1em;
+}
+
+footer > a {
+  color: var(--clr-primary);
+}
+
+@media (min-width: 800px) {
+  main {
+    padding: 4em 0;
+  }
+  .job-post {
+    padding: 1.5em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .job-title > h2 {
+    margin-top: 0.5em;
+    font-size: 1.3rem;
+  }
+  .post__company-logo {
+    position: static;
+    max-width: 100px;
+    transform: translateY(0);
+  }
+
+  .post__text {
+    width: 40%;
+  }
+  .mobile-divider {
+    display: none;
+  }
+
+  .tags {
+    width: 50%;
+    justify-content: flex-end;
+  }
+}
