@@ -13,7 +13,8 @@
 
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
-*.md
+README-orig.md
+style-guide.md
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
